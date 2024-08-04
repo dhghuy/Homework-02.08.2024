@@ -1,0 +1,49 @@
+<!--<div class="card-holder">-->
+<!--  <h2>{{this.name}}</h2>-->
+<!--  <h2>{{this.price}}</h2>-->
+<!--  <h3>{{this.description}}</h3>-->
+<!--  <h3>{{this.inStock}}</h3>-->
+<!--  <button-->
+<!--    mat-flat-button color="primary"-->
+<!--    (click)="addToCart({-->
+<!--                                    id: this.id,-->
+<!--                                    name: this.name,-->
+<!--                                    price: this.price,-->
+<!--                                    quantity: 1,-->
+<!--                                    })">-->
+<!--    Add to cart-->
+<!--  </button>-->
+<!--  <div>-->
+<!--    <p>{{this.quantity}}</p>.-->
+<!--    <button (click)="cardService.decreaseItemQuantity(this.id)" >-1</button>-->
+<!--    <button (click)="cardService.increaseItemQuantity(this.id)" >+1</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div>
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{this.name}}</mat-card-title>
+      <mat-card-subtitle>Price: {{this.price}}</mat-card-subtitle>
+      <mat-card-subtitle>In Stock: {{this.inStock}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{this.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button (click)="addToCart({
+                                   id: this.id,
+                                   name: this.name,
+                                   price: this.price,
+                                   quantity: 1
+                                  })">Add to cart</button>
+      <button mat-flat-button (click)="cardService.decreaseItemQuantity(this.id)">-1</button>
+      <button mat-flat-button>{{this.quantity}}</button>
+      <button mat-flat-button (click)="cardService.increaseItemQuantity(this.id)">+1</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
