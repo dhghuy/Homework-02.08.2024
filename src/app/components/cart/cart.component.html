@@ -1,17 +1,28 @@
-
-<div>
-  <mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>{{this.name}}</mat-card-title>
-        <mat-card-subtitle>Price: {{this.price}}</mat-card-subtitle>
-        <mat-card-subtitle>Quantity: {{this.quantity}}</mat-card-subtitle>
-        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-      {{this.description}}
-    </mat-card-content>
-    <button mat-flat-button (click)="cardService.removeItem(0)">Remove</button>
-  </mat-card>
+<div id="container">
+  @for (item of cartService.cart; track $index) {
+    <div id="cart">
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <mat-card-subtitle>Price: ${{item.price}}</mat-card-subtitle>
+            <mat-card-subtitle>Quantity: {{item.quantity}}</mat-card-subtitle>
+            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          {{item.description}}
+        </mat-card-content>
+        <button mat-flat-button (click)="cartService.removeItem($index)">Remove</button>
+      </mat-card>
+    </div>
+  }
 </div>
+
+<div id="payment">
+  <h1>Total: ${{cartService.tongTien}}</h1>
+  <button mat-stroked-button (click)="cartService.payCart()"><b>PAY</b></button>
+</div>
+
+
+

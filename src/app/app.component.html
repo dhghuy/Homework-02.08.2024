@@ -1,35 +1,44 @@
-<div id="card-container">
-  @for (prod of this.cartService.products; track $index) {
-      <div id="card-holder">
-          <app-card
-                    [id] = "prod.id"
-                    [name]="prod.name"
-                    [description]="prod.description"
-                    [price]="prod.price"
-                    [inStock]="prod.inStock"
-                    [quantity]="prod.quantity"
-                    >
-          </app-card>
-      </div>
-  }
-</div>
-<div id="cart">
-  <h1>CART</h1>
-  @for (item of cartService.cart; track $index) {
-    <div id="cart-holder">
-      <app-cart
-                [id] = "item.id"
-                [name]="item.name"
-                [description]="item.description"
-                [price]="item.price"
-                [inStock]="item.inStock"
-                [quantity]="item.quantity">
-      </app-cart>
-    </div>
-  }
-</div>
 
-<div>
-  <h2>Total: {{cartService.tongTien}}</h2>
-  <button mat-flat-button (click)="cartService.payCart()">THANH TOÁN</button>
-</div>
+
+
+
+<!--<div id="card-container">-->
+<!--  @for (prod of this.cartService.products; track $index) {-->
+<!--      <div id="card-holder">-->
+<!--          <app-card-->
+<!--                    [id] = "prod.id"-->
+<!--                    [name]="prod.name"-->
+<!--                    [description]="prod.description"-->
+<!--                    [price]="prod.price"-->
+<!--                    [inStock]="prod.inStock"-->
+<!--                    [quantity]="prod.quantity"-->
+<!--                    [hinh] = "prod.hinh"-->
+<!--                    >-->
+<!--          </app-card>-->
+<!--      </div>-->
+<!--  }-->
+<!--</div>-->
+<!--<div id="cart">-->
+<!--  <h1>CART</h1>-->
+<!--  @for (item of cartService.cart; track $index) {-->
+<!--    <div id="cart-holder">-->
+<!--      <app-cart-->
+<!--                [id] = "item.id"-->
+<!--                [name]="item.name"-->
+<!--                [description]="item.description"-->
+<!--                [price]="item.price"-->
+<!--                [inStock]="item.inStock"-->
+<!--                [quantity]="item.quantity"-->
+<!--                [hinh] = "item.hinh"-->
+<!--      >-->
+<!--      </app-cart>-->
+<!--    </div>-->
+<!--  }-->
+<!--</div>-->
+
+<!--<div>-->
+<!--  <h2>Total: {{cartService.tongTien}}</h2>-->
+<!--  <button mat-flat-button (click)="cartService.payCart()">THANH TOÁN</button>-->
+<!--</div>-->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

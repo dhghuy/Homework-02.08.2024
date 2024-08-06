@@ -1,0 +1,32 @@
+<div id="container">
+  <div id="left">
+    <img src="{{detailProduct.hinh}}">
+  </div>
+
+  <div id="right">
+    <h1>{{detailProduct.name}}</h1>
+    <h2>Price: ${{detailProduct.price}}</h2>
+    <h3>In Stock: {{detailProduct.inStock}}</h3>
+    <p>Des: {{detailProduct.description}}</p>
+    <div id="button">
+      @if (auth.currentUser !=null) {
+        <button mat-flat-button
+                (click)="cartService.addToCart({
+                                     id: detailProduct.id,
+                                     name: detailProduct.name,
+                                     price: detailProduct.price,
+                                     quantity: 1
+                                    })">Add to cart</button>
+        <button mat-flat-button (click)="cartService.decreaseItemQuantity(detailProduct.id)">-1</button>
+        <button mat-flat-button>{{detailProduct.quantity}}</button>
+        <button mat-flat-button (click)="cartService.increaseItemQuantity(detailProduct.id)">+1</button>
+      } @else {
+        <button mat-flat-button (click)="auth.alert()">Add to cart</button>
+        <button mat-flat-button (click)="auth.alert()">-1</button>
+        <button mat-flat-button (click)="auth.alert()">{{detailProduct.quantity}}</button>
+        <button mat-flat-button (click)="auth.alert()">+1</button>
+      }
+    </div>
+  </div>
+</div>
+

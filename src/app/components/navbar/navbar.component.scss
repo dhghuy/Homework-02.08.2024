@@ -1,0 +1,37 @@
+#navbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #D20062;
+  color: #C4E4FF;
+}
+
+#left-navbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 30px;
+  padding-left: 15px;
+}
+
+#right-navbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  padding-right: 15px;
+}
+img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+#right-navbar > button {
+  color: #D20062;
+}

@@ -1,0 +1,17 @@
+<div id="navbar">
+  <div id="left-navbar">
+    <div [routerLink]="['/home']"><b>HOME</b></div>
+    <div [routerLink]="['/products']"><b>PRODUCTS</b></div>
+    <div [routerLink]="['/cart']"><b>CART</b></div>
+  </div>
+
+  <div id="right-navbar">
+    @if (auth.currentUser != null) {
+      <img src="{{this.auth.currentUser.photoURL}}">
+    } @else if (auth.currentUser == null) {
+      <img src="https://www.w3schools.com/howto/img_avatar.png">
+    }
+    <button mat-flat-button (click)="auth.login()">LOGIN</button>
+    <button mat-flat-button (click)="auth.logout()">LOGOUT</button>
+  </div>
+</div>
